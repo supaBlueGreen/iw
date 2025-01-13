@@ -53,16 +53,11 @@
     </div>
 
     <script>
-        // Check if the user is blocked
-        if (Cookies.get('blocked')) {
-            window.location.href = 'blocked.html';
-        }
-
         document.getElementById('submitButton').addEventListener('click', function () {
             const selectedOption = document.querySelector('input[name="answer"]:checked');
             
             if (!selectedOption) {
-                alert('Please select an answer!');
+                alert('Hicht hal nabzhardwa 🥲');
                 return;
             }
             
@@ -70,9 +65,8 @@
                 // Correct answer, redirect to hello.html
                 window.location.href = 'hello.html';
             } else {
-                // Wrong answer, block and redirect to blocked.html
-                Cookies.set('blocked', true, { expires: 7 }); // Block for 7 days
-                window.location.href = 'blocked.html';
+                // Wrong answer, show an alert to retry
+                alert('Ow na, halaya 🤧');
             }
         });
     </script>
